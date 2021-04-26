@@ -1,0 +1,65 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: name and basic info
+  steps:
+  - intent: tell_name
+  - action: utter_name
+
+- rule: Activate form
+  steps:
+  - intent: appointment
+  - action: utter_appointment
+  - action: user_details_form
+  - active_loop: user_details_form
+
+- rule: Submit form
+  condition:
+  #condition that form is active
+  - active_loop: user_details_form
+  steps:
+  #Form is deactivated
+  - action: user_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_submit
+  - action: utter_details_thanks
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: scope for is nice talking
+  steps:
+  - intent: you_are_nice_talking
+  - action: utter_thanks
+  - action: utter_complement_talk
+
+- rule: Respone to the user if he is fine
+  steps:
+  - intent: being_fine
+  - action: utter_fine_response
+
+- rule: scope for nice
+  steps:
+  - intent: you_are_nice
+  - action: utter_thanks
+  - action: utter_complement

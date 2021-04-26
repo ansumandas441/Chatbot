@@ -1,0 +1,249 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hello how are you doing?
+    - Hello, greetings my friend
+    - a very good evening
+    - wish you a good evening
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - see you
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - I shall see you later
+    - I will be seeing you tomorow
+    - we will meet some time later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - yesssss
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very gutter_utter_please_rephrase::ood
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: appointment
+  examples: |
+    - Can I have an appointment?
+    - How can I meet with you?
+    - How to meet?
+    - I would like to have a meeting
+    - I would like to meet.
+    - Please set an appointment
+    - I would like to schedule and appointment.
+    - I want to book
+    - Book appt
+    - Schedule appt
+    - Schedule appointment
+    - Need to book appt
+    - Need to book
+    - Need to schedule an appointment
+    - book appointment
+    - book appt
+    - book
+    - schedule appointment
+    - schedule appt
+    - I want to book
+    - I want to book an appointment
+    - I want to book appt
+    - I want to book appointment
+    - I would like to book appointment
+    - I would like to book appt
+    - Need to schedule an appointment
+    - schedule appointment
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - saaaaad
+
+- intent: being_fine
+  examples: |
+    - I am fine
+    - I am good.
+    - I am well.
+    - Nice
+    - Well.
+    - Wonderful.
+    - Mindblowing
+    - Fantastic.
+    - great.
+    - excellent
+    - first-class
+    - exquisite
+    - magnificent
+    - outstanding.
+    - splendid
+
+- intent: tell_name
+  examples: |
+    - what is your name?
+    - tell me your name
+    - who are you?
+    - what others call you?
+    - what should i call you?
+    - name please
+    - your name please
+    - can you identify yourself
+    - can i know your name?
+    - yor identity please
+    - i would like to know your name.
+    - hey, what's your name
+    - what should i call you?
+
+
+- intent: my_name
+  examples: |
+    - my name is [ansuman]{"entity":"name","value":"ansuman"}
+    - my name is [rahul]{"entity":"name","value":"rahul"}
+    - my name is [arpan]{"entity":"name","value":"arpan"}
+    - [ashish]{"entity":"name","value":"ashish"} is my name
+    - [ashish]{"entity":"name","value":"ashish"} Here
+    - [ashish]{"entity":"name","value":"ashish"} this side
+    - people call me [ashish]{"entity":"name","value":"ashish"}
+
+- intent: mobile_number
+  examples: |
+    - my number is [8900234412]{"entity":"number"}
+    - [8900234432]{"entity":"number"}
+    - my mobile number is [8900234412]{"entity":"number"}
+    - [8900234412]{"entity":"number"} is my mobile number
+
+- intent: email_id_info
+  examples: |
+    - my email id is [xyz@simba.com]{"entity":"email_id","value":"xyz@simba.com"}
+    - [tinger@xyz.ac.eu]{"entity":"email_id","value":"tinger@xyz.ac.eu"}
+    - my email is [xy@png.ac.in]{"entity":"email_id","value":"xy@png.ac.in"}
+    - my email id is [xy@png.ac.in]{"entity":"email_id","value":"xy@png.ac.in"}
+    -  my email id is [alcatraz@gmail.com]{"entity":"email_id","value":"alcatraz@gmail.com"}
+    - [phy@reddit.com]{"entity":"email_id","value":"phy@reddit.com"} is my email id
+    - [phy@yahoo.com]{"entity":"email_id","value":"phy@yahoo.com"} is my email id
+
+
+- intent: timing
+  examples: |
+    - [5 am]{"entity":"time"} would be great.
+    - PLease do it at [12 am]{"entity":"time"}
+    - Appointment for [5:30 PM]{"entity":"time"}
+    - I would like to have an appointment at [4 Pm]{"entity":"time"} tomorrow.
+    - Please set an appointment at [3 PM]{"entity":"time"}
+    - I want to book at [4 pm]{"entity":"time"} friday
+    - Can I schedule an appointment for [3 pm]{"entity":"time"} on wednesday?
+    - Can I come in wednesday at [4 pm]{"entity":"time"} for adjustment?
+    - I want to come in tuesday at [2 pm]{"entity":"time"} for adjustment?
+    - Is [4 pm]{"entity":"time"} friday available?
+    - Can I come in wednesday at [2 pm]{"entity":"time"}?
+    - Schedule an appointment for [6 pm]{"entity":"time"}
+    - Can I come in wednesday at [1 am]{"entity":"time"}?
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - what is 2+2
+    - who's the prime minister
+    - who am i?
+    - what is moon
+    - what is the meaning of life
+    - why would i talk
+    - i will eat something
+    - i wanna eat donut
+    - 2+4
+
+- intent: you_are_nice_talking
+  examples: |
+    - i like talking to you.
+    - I feel good talking to you.
+    - you are a good talker.
+    - nice talking to you.
+    - when i talk to you you my heart melts.
+    - Talking to you was the best thing.
+
+- intent: you_are_nice
+  examples: |
+    - you are very nice.
+    - aww you are so cute.
+    - you are cute.
+    - you are such a nice person.
+    - you rock.
+    - you are the boss.
+    - I love you.
+    - I like you very much.
+
+# - intent: my_time
+#   examples: |
+#     - I would like to book appointment at  [3 pm]{"entity":"time","value":"3 pm"}
+#     - please book appointment at [5 am]{"entity":"time","value":"5 am"}
+#     - Book for [2 pm]{"entity":"time","value":"2 pm"}

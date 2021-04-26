@@ -1,0 +1,155 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- tell_name:
+    use_entities: true
+- appointment:
+    use_entities: true
+- reschedule_appt:
+    use_entities: true
+- cancel_appt:
+    use_entities: true
+- help:
+    use_entities: true
+- my_name:
+    use_entities:
+    - name
+- mobile_number:
+    use_entities:
+    - number
+- email_id_info:
+    use_entities:
+    - email_id
+- timing:
+    use_entities:
+    - time
+- being_fine:
+    use_entities: true
+- you_are_nice_talking:
+    use_entities: true
+- you_are_nice:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+entities:
+- name
+- number
+- time
+- email_id
+slots:
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  number:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  email_id:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  time:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: |-
+      Hey! How are you? I can help you with career counselling.
+      You can book an appointment with our professionals.
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_name:
+  - text: My name is Innovate Yourself.
+  utter_ask_name:
+  - text: Please tell me your name.
+  utter_ask_number:
+  - text: What is your mobile number?
+  utter_thanks:
+  - text: Thank you very much.
+  - text: Thank you.
+  utter_please_rephrase:
+  - text: Sorry, I did'nt hear what you said.
+  - text: sorry, Once more please.
+  utter_out_of_scope:
+  - text: Sorry, I can't handle that request.
+  utter_complement:
+  - text: You are a very nice person too.
+  - text: You are so kind hearted.
+  - text: It's been long i have talked to someone as nice as you.
+  utter_complement_talk:
+  - text: Nice talking to you too.
+  - text: You are a great talker, I enjoy talking to you.
+  - text: It's been long i have talked to someone as nice as you.
+  - text: Talking to you is the best thing I have ever done.
+  utter_ask_time:
+  - text: What time would you like to book the appointment?
+  utter_ask_email_id:
+  - text: Please Provide your email ID.
+  utter_fine_response:
+  - text: Great! good to hear that.
+  utter_appointment:
+  - text: I would be needing some information for booking your Appointment.
+  utter_details_thanks:
+  - text: |-
+      {Name} thanks for providing the given details
+      Name:{Name},
+      Mobile number:{Mobile_number},
+      Email: {Email},
+      Time: {Time}
+actions:
+- action_submit
+forms:
+  user_details_form:
+    email_id:
+    - entity: email_id
+      type: from_entity
+    name:
+    - entity: name
+      type: from_entity
+    number:
+    - entity: number
+      type: from_entity
+    time:
+    - entity: time
+      type: from_entity
+e2e_actions: []
