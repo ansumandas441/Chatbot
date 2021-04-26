@@ -1,5 +1,5 @@
 Usage:
   
-  rasa run actions
+    rasa run actions
   
-  rasa shell or rasa x
+    rasa shell or rasa x
